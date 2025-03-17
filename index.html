@@ -100,10 +100,10 @@
     <h1>Relatics Import Tool</h1>
     <p>
         The <strong>Relatics Import Tool (RIM)</strong> streamlines data migration by extracting content from Word files in multiple formats and transforming it into a structured Excel file for seamless Relatics import. 
-        This <a href="https://github.com/your-repo" target="_blank" style="color: #FF8855; text-decoration: none;">open-source</a> solution enhances efficiency, reducing manual effort and errors while saving valuable time and resources.
+        This <a href="https://github.com/Iven-Meyer/S-B-Relatics-Import" target="_blank" style="color: #FF8855; text-decoration: none;">open-source</a> solution enhances efficiency, reducing manual effort and errors while saving valuable time and resources.
     </p>
     
-    <a href="https://github.com/Iven-Meyer/S-B-Relatics-Import/releases/download/ZIP/rim.zip" class="download-btn" download>Download RIM</a>
+    <a href="javascript:void(0);" class="download-btn" id="downloadBtn">Download RIM</a>
     
     <div class="sidebar" id="sidebar">
         <div class="close-btn" onclick="toggleMenu()">&times;</div>
@@ -113,9 +113,35 @@
     </div>
     
     <script>
+        // Toggle the sidebar menu
         function toggleMenu() {
             document.getElementById("sidebar").classList.toggle("show");
         }
+
+        // Handle the download button click
+        document.getElementById('downloadBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevents the default download action
+            
+            // Open the pop-up window
+            var popup = window.open("", "DownloadPopup", "width=400,height=30");
+            
+            // Ensure the title is set properly
+            popup.document.title = "RIM Install Guide"; // Set title directly
+
+            // Add content to the pop-up after ensuring the title is set
+            popup.document.write("<html><head><title>RIM Download - Install Guide</title></head><body>");
+            popup.document.write("<h2>INSTALL GUIDE</h2>");
+            popup.document.write("<p>Your download will start shortly. If it doesn't, click <a href='https://github.com/Iven-Meyer/S-B-Relatics-Import/releases/download/ZIP/rim.zip' target='_blank'>here</a>.</p>");
+            popup.document.write("To install RIM, extract the zip file, right-click the RIM.exe file and go to <q>properties</q>. Then, check the <q>unblock</q>-box under security.");
+            popup.document.write("<img src='Unblock.png' alt='RIM Installation' style='width:100%; max-width:300px; margin: 20px auto; display:block;'>");
+            popup.document.write("Finally, click Apply and OK. Now you can safely open RIM.");
+            popup.document.write("</body></html>");
+            
+            // Delay the actual download after a short time (to simulate pop-up)
+            setTimeout(function() {
+                window.location.href = "https://github.com/Iven-Meyer/S-B-Relatics-Import/releases/download/ZIP/rim.zip"; // Initiates the download after the pop-up
+            }, 1500); // 2-second delay before starting the download
+        });
     </script>
 </body>
 </html>
