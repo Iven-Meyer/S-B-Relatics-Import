@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced - Relatics Import Tool</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #273943;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            overflow: hidden;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            margin: 10px 0;
+        }
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .download-btn {
+            background-color: #009DF0;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        .download-btn:hover {
+            background-color: #0077B3;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards 0.5s;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #1F2A36;
+            padding-top: 60px;
+            transition: right 0.3s ease-in-out;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #009DF0;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .sidebar.show {
+            right: 0;
+        }
+        .spacer {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    
+    <h1>Open Source</h1>
+    <p>
+        Making <strong>Relatics Import Tool</strong> open-source ensures transparency, continuous improvement, and community-driven innovation. Developers can enhance functionality, adapt it to specific needs, and contribute to a more efficient workflow. Open collaboration accelerates progress, reducing costs while empowering users with a reliable, adaptable, and ever-evolving solution.
+    </p>
+    
+    <a href="https://github.com/your-repo" target="_blank" class="download-btn">Open GitHub Page</a>
+
+    <div class="spacer"></div>
+    
+    <h1>No UI-code</h1>
+    <p>
+        This project is also available without the UI (user interface). The entire backend is written in Python and can be downloaded and modified if you wish to make any changes to RIM. 
+        The backend code can be found below.
+    </p>
+    
+    <a href="https://github.com/your-repo/backend" target="_blank" class="download-btn">View backend code (without UI)</a>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Home</a>
+        <a href="advanced.html">Advanced</a>
+        <a href="manual.pdf" target="_blank">Manual</a>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

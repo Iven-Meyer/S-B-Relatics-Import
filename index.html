@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIM Download</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #273943;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            overflow: hidden;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 10px 0;
+        }
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .download-btn {
+            background-color: #009DF0;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        .download-btn:hover {
+            background-color: #0077B3;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards 0.5s;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #1F2A36;
+            padding-top: 60px;
+            transition: right 0.3s ease-in-out;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #009DF0;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .sidebar.show {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    
+    <img src="RIM.png" alt="RIM Logo" class="logo">
+    <h1>Relatics Import Tool</h1>
+    <p>
+        The <strong>Relatics Import Tool (RIM)</strong> streamlines data migration by extracting content from Word files in multiple formats and transforming it into a structured Excel file for seamless Relatics import. 
+        This <a href="https://github.com/your-repo" target="_blank" style="color: #FF8855; text-decoration: none;">open-source</a> solution enhances efficiency, reducing manual effort and errors while saving valuable time and resources.
+    </p>
+    
+    <a href="RIM.zip" class="download-btn" download>Download RIM</a>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Home</a>
+        <a href="advanced.html">Advanced</a>
+        <a href="manual.pdf" target="_blank">Manual</a>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
